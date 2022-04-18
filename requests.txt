@@ -6,7 +6,7 @@ Rubber.objects.filter(brand='Michelin', diametr='16')
 >>> Получаем список резины по заданным производителю и диаметру.
 
 
-Discs.objects.filret(model='REVENGE').ubdate(color='SILVER')
+Disc.objects.filret(model='REVENGE').ubdate(color='SILVER')
 >>> У определенной модели дисков изменили цвет.
 
 

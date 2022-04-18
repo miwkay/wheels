@@ -7,10 +7,10 @@ class Rubber(models.Model):
     brand = models.CharField(max_length=100)
     model = models.CharField(max_length=250)
     season = models.CharField(max_length=20)
-    width = models.IntegerField(max_length=3)
-    profile = models.IntegerField(max_length=2)
-    diametr = models.IntegerField(max_length=2)
-    load_index = models.IntegerField(max_length=3)
+    width = models.IntegerField()
+    profile = models.IntegerField()
+    diametr = models.IntegerField()
+    load_index = models.IntegerField()
     speed_index = models.CharField(max_length=1)
 
     # Speed index km/h:
@@ -20,12 +20,12 @@ class Rubber(models.Model):
         return f"{self.brand} {self.model} - {self.width}/{self.profile}/{self.diametr} - {self.season}"
 
 
-class Discs(models.Model):
+class Disc(models.Model):
     brand = models.CharField(max_length=100)
     model = models.CharField(max_length=250)
     color = models.CharField(max_length=50)
     width = models.FloatField(max_length=4)
-    diametr = models.IntegerField(max_length=2)
+    diametr = models.IntegerField()
 
     # load_index = models.PositiveIntegerField(max_length=3)
     # speed_index = models.CharField(max_length=1)

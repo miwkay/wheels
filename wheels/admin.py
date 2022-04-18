@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Discs, Rubber
+from .models import Disc, Rubber
 
 admin.site.register(Rubber)
-admin.site.register(Discs)
+admin.site.register(Disc)
