@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+
 urlpatterns = [
     path('', include('wheels.urls')),
     path('admin/', admin.site.urls),
-    path('wheels/', include('wheels.urls')),
+    path('rubber/', include('wheels.urls')),
+    path('discs/', include('wheels.urls')),
 ]

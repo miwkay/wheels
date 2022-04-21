@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DISCS</title>
+</head>
+<body>
+    <a href="http://127.0.0.1:8000"><h3>Main page</h3></a>
+    <h1>Страница Discs</h1>
+    {% if disc %}
+        {% for element in disc %}
+            <div class="alert alert-warning">
+                <h3>R-{{ element.diametr }} {{ element.brand }}</h3>
+                <p>{{ element.model }} - {{ element.color }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Нет данных. :(</p>
+    {% endif %}
+</body>
+</html>

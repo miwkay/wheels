@@ -1,22 +1,18 @@
 from django.http import HttpResponse
-# from django.shortcuts import render
+from django.shortcuts import render
 
-
-# from Django.Wheels.wheels.models import Rubber, Discs
+from .models import Disc, Rubber
 
 
 def index(request):
-    return HttpResponse("<h3>Перейдите в раздел <h2>/wheels</h2></h3>")
+    return render(request, 'wheels/index.html')
 
 
-# def wheels(request):
-#     return render(request, 'wheels.html')
+def rubber(request):
+    rubber = Rubber.objects.filter(diametr='17')
+    return render(request, 'wheels/rubber.html', {'rubber': rubber})
 
-def wheels(request):
-    return HttpResponse("<h1>Успех!</h1>")
 
-# def wheels(request):
-#     amount_rubber = Rubber.objects.count()
-#     amount_discs = Discs.objects.count()
-#     return HttpResponse(f"<h3>Всего автомобильной резины: {amount_rubber}"
-#                         f"Всего автомобильных дисков: {amount_discs}</h3>")
+def disc(request):
+    disc = Disc.objects.order_by('diametr')
+    return render(request, 'wheels/disc.html', {'disc': disc})
