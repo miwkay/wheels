@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RUBBER</title>
+</head>
+<body>
+    <a href="http://127.0.0.1:8000"><h3>Main page</h3></a>
+    <h1>Страница Rubber</h1>
+    <h2>Вывел резину 17-го радиуса:</h2>
+    {% if rubber %}
+        {% for element in rubber %}
+            <div class="alert alert-warning">
+                <h3>{{ element.brand }}</h3>
+                <p>{{ element.model }} - {{ element.width }}/{{ element.profile }}/R-{{ element.diametr }} - {{ element.season }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Нет данных. :(</p>
+    {% endif %}
+</body>
+</html>
