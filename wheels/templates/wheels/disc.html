@@ -23,5 +23,28 @@
     {% else %}
         <p>Нет данных. :(</p>
     {% endif %}
+
+
+
+<div class="pagination">
+
+    {% if discs_all.has_previous %}
+        <a href="?page={{ discs_all.previous_page_number }}">←</a>
+    {% endif %}
+
+    {% for num in discs_all.paginator.page_range %}
+        {% if num == discs_all.number %}
+            <span class="current"><b>{{ num }}</b></span>
+        {% else %}
+            <a href="?page={{ num }}"> {{ num }}</a>
+        {% endif %}
+    {% endfor %}
+
+    {% if discs_all.has_next %}
+        <a href="?page={{ discs_all.next_page_number }}">→</a>
+    {% endif %}
+
+</div>
 </body>
+
 </html>

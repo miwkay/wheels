@@ -1,6 +1,6 @@
-from Django.Wheels.wheels.models import Disc, Rubber
-
 from django import forms
+
+from ..models import Contact, Disc, Rubber
 
 
 class DiscForm(forms.ModelForm):
@@ -21,3 +21,9 @@ class RubberForm(forms.ModelForm):
             'diametr',
             'season',
         )
+
+
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = '__all__'
